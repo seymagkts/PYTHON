@@ -1,4 +1,4 @@
-# Fonksiyonlara kadar
+# Gomulu fonksiyonlar ilk 3, moduller, hatalar ve istisnalar, dosya işlemleri, ileri seviye veri yapıları, oop, ileri seviye moduller.
 # ******************** TEMEL ********************
 # Oyuncu Kaydetme Programı
 """
@@ -14,7 +14,7 @@ print("Oyuncunun adi: {} \nOyuncunun soyadı: {} \nOyuncunun takımı: {}".forma
 print("Bilgiler kaydedildi.")"""
 
 # Kok Bulma
-import random
+import math
 
 """
 a = int(input("Birinci sayıyı giriniz: "))
@@ -211,33 +211,6 @@ elif (islem=="2"):
         print("Ucgen oluşmaz")
 else:
     print("Gecersiz islem") """
-
-#  Bankamatik uygulaması
-"""
-bakiye=5000
-print("Basit ATM Uygulaması","1. Para cekme","2. Para yatırma","3. Bakiye sorgulama","Çıkmak icin 'q'ya basın",sep="\n")
-print("*************************************************************")
-while (True):
-    print("*************************************************************")
-    islem = input("Bir islem seciniz: ")
-    if (islem == "1"):
-        cekilecek_tutar = int(input("Tutar giriniz: "))
-        if (cekilecek_tutar > bakiye):
-            print("Bakiye yetersiz...")
-            continue
-        bakiye -= cekilecek_tutar
-        print("Kalan bakiyeniz: ", bakiye)
-    elif (islem == "2"):
-        yatirilacak_tutar = int(input("Tutar giriniz: "))
-        bakiye += yatirilacak_tutar
-        print("Yeni bakiyeniz: ", bakiye)
-    elif (islem == "3"):
-        print("Bakiyeniz: ",bakiye)
-    elif (islem=="q"):
-        print("Çıkış yapılıyor...")
-        break
-    else:
-        print("Gecersiz islem...") """
 
 # Girilen 3 basamaklı bir sayının basamaklarının küpleri toplamı sayının kendine eşit olup olmadığını bulan program
 """
@@ -475,6 +448,7 @@ for i in aranan:
     if (i==aranacak):
         total.append(i)
 print("{} karakteri '{}' içinde {} tane var.".format(aranacak,aranan,len(total))) """
+
 # Asal carpan bulma
 """
 def asal_bulma():
@@ -488,113 +462,6 @@ def asal_bulma():
     print("{} asal bölenleri: {}".format(sayi, dizi))
     if (len(dizi)==0):
         print("Bu sayı asaldır.") """
-# Girilen sayının smith sayısı olup olmadığını bulan program
-# Smith sayısı:  1 den büyük asal olmayan bir tam sayının rakamlarının toplamı, sayı, asal çarpanlarına ayrılarak yazıldığında bu yazılışta bulunan tüm asal çarpanların rakamlarının
-# toplamına eşit oluyorsa bu tür sayılara denir
-"""
-sayi = int(input("Sayi giriniz: "))
-yedek_sayi = str(sayi)
-basamak = len(yedek_sayi)
-asal_carpan = 0
-carpan_toplam = 0
-rakam_toplam = 0
-# sayinin basamakları toplamı
-for i in range(0,basamak):
-    rakam_toplam += int(yedek_sayi[i])
-# sayinin asal carpanları toplamı
-for asal in range(2,sayi):
-    if (sayi % asal == 0 ):
-        sayi_basamak = str(asal)
-        for bas in sayi_basamak:
-            carpan_toplam += int(bas)
-
-if (carpan_toplam==rakam_toplam):
-    print("{} bir smith sayısıdır.".format(sayi))
-else:
-    print("{} bir smith sayısı değildir.".format(sayi))
-
-print(rakam_toplam)
-print(carpan_toplam) """
-
-#*****************************************
-
-"""
-sayi = int(input("Sayi giriniz: ")) # sayi degiskeni elimizde - int
-
-stringSayi=str(sayi)
-basamak = len(stringSayi)
-
-# basamakalari toplami:
-elemanToplam=0
-for i in range(0,basamak):
-    elemanToplam += int(stringSayi[i])
-print(elemanToplam)
-
-
-tamBolenler=0
-# asal carpanlari:
-for x in range(2,sayi):
-    if(sayi%x==0):
-        sayiBasamak=str(x)
-        for i in sayiBasamak:
-            tamBolenler+=int(i)
-print(tamBolenler)
-
-if(elemanToplam==tamBolenler):
-    print(sayi,"bir smith sayisidir.") """
-
-# 1000'e kadar olan smith
-
-"""
-smithSayilari = []
-
-def AsalCarpanlariBul(n):
-    dizi = []
-    n = int(n)
-    tamBolenler = []
-    for i in range(2, n):
-        while n % i == 0:
-            n = n / i
-            tamBolenler.append(i)
-    for i in tamBolenler:
-        if (AsalMi(i)):
-            dizi.append(i)
-    return dizi
-
-
-def AsalMi(n):
-    if n == 2:
-        return True
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-            break
-        else:
-            return True
-
-
-def diziElemanlariniTopla(dizi):
-    diziToplam = 0
-    for i in dizi:
-        gecici = str(i)
-        for j in range(len(gecici)):
-            diziToplam += int(gecici[j])
-    return diziToplam
-
-
-def sayiDegerleriniTopla(sayi):
-    sayiDegerleriToplam = 0
-    sayi = str(sayi)
-    for i in range(len(sayi)):
-        sayiDegerleriToplam += int(sayi[i])
-    return sayiDegerleriToplam
-
-
-for k in range(2, 1000):
-    if diziElemanlariniTopla(AsalCarpanlariBul(k)) == sayiDegerleriniTopla(k):
-        smithSayilari.append(k)
-
-print(smithSayilari)"""
 
 # EBOB / EKOK bulma
 """
@@ -619,49 +486,152 @@ while (True):
     else:
         print("Geçersiz islem...") """
 
-# Kayıt
+# # ******************** FONKSİYONLAR ********************
+# Asal sayı bulma
 """
-print("Hos Geldiniz...")
-print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-print("KAYIT")
-ad_kullanici = input("Adınızı giriniz: ")
-soyad_kullanici = input("Soyadınızı giriniz: ")
-tcKimlik_kullanici = int(input("TC kimlik numaranızı giriniz: "))
-dogumTarihi_kullanici = input("Dogum tarihinizi giriniz: ")
-eposta_kullanici = input("Epostanızı giriniz: ")
-eposta2_kullanici = input("Epostanızı giriniz (tekrar): ")
-sifre_kullanici = input("Sifrenizi giriniz: ")
-sifre2_kullanici = input("Sifrenizi giriniz (tekrar): ")
+def asal_mi(sayi):
+    for i in range(2,sayi):
+        if (sayi % i == 0):
+            if (i==sayi):
+                return False
+            else:
+                return True
+while (True):
+    deger = input("Bir sayi giriniz (sonlandırmak icin q): ")
+    if deger == "q":
+        print("Sonlandırılıyor...")
+        break
+    if asal_mi(int(deger)):
+        print("{} asal degildir.".format(deger))
+    else:
+        print("{} asaldır.".format(deger)) """
+
+# Tam bölen bulma
+"""
+def bolen(sayi):
+    tam_bolen = []
+    for i in range(2,sayi):
+        if (sayi % i == 0 ):
+            tam_bolen.append(i)
+    return tam_bolen
+while (True):
+    bolunen = input("Bir sayi giriniz (sonlandırmak için q'ya basın): ")
+    if (bolunen == "q"):
+        print("Sonlandırılıyor...")
+        break
+    else:
+        print("{} tam bolenleri: {}".format(bolunen,bolen(int(bolunen))))  """
+
+# Kullanıcıdan 2 basamaklı bir sayı alın ve bu sayının okunuşunu bulan bir fonksiyon yazın.
+"""
+birler = ["", "Bir","İki", "Üç", "Dört", "Beş", "Altı", "Yedi", "Sekiz", "Dokuz"]
+onlar = ["","On", "Yirmi", "Otuz", "Kırk", "Elli", "Altmış", "Yetmiş", "Seksen", "Doksan"]
+def sayi_oku():
+    sayi = int(input("İki basamaklı bir sayi giriniz: "))
+    sayi_birler = sayi % 10
+    sayi_onlar = sayi // 10
+
+    return onlar[sayi_onlar]+" "+birler[sayi_birler]
+
+print(sayi_oku()) """
+
+# 1'den 100'e kadar olan sayılardan pisagor üçgeni oluşturanları ekrana yazdıran bir fonksiyon yazın.
+"""
+def pisagor():
+    dizi = []
+    for i in range(1,100):
+        for j in range(1,100):
+            c = ((i**2)+(j**2)) ** 0.5
+            if (c==int(c)):
+                dizi.append((i,j,int(c)))
+    return dizi
+
+for i in pisagor():
+    print(i) """
+
+# ucgen alan, çevre hesaplama
+"""
+def ucgen_alan(a,h):
+    return (a*h)/2
+cevre = lambda z,x,c : z+x+c
 
 while (True):
-    if (sifre_kullanici == sifre2_kullanici) and (eposta_kullanici == eposta2_kullanici):
-        kod = random.randint(1000,10000)
-        print(kod)
-        dogrulama = int(input("Kodu giriniz: "))
-        if (kod == dogrulama):
-           print("KAYİT BASARILI...")
-           print("{} {}, Genc Ne Sever'e Hos Geldiniz....".format(ad_kullanici,soyad_kullanici))
-           break
-        else:
-            print("KOD HATALI...")
-    elif (sifre_kullanici == sifre2_kullanici) and (eposta_kullanici != eposta2_kullanici):
-        print("E-POSTANIZ HATALI...")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        eposta_kullanici = input("Epostanızı giriniz: ")
-        eposta2_kullanici = input("Epostanızı giriniz (tekrar): ")
-        sifre_kullanici = input("Sifrenizi giriniz: ")
-        sifre2_kullanici = input("Sifrenizi giriniz (tekrar): ")
-    elif (sifre_kullanici != sifre2_kullanici) and (eposta_kullanici == eposta2_kullanici):
-        print("SİFRENİZ HATALI...")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        eposta_kullanici = input("Epostanızı giriniz: ")
-        eposta2_kullanici = input("Epostanızı giriniz (tekrar): ")
-        sifre_kullanici = input("Sifrenizi giriniz: ")
-        sifre2_kullanici = input("Sifrenizi giriniz (tekrar): ")
-    elif (sifre_kullanici != sifre2_kullanici) and (eposta_kullanici != eposta2_kullanici):
-        print("SİFRENİZ VE E-POSTANIZ HATALI...")
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        eposta_kullanici = input("Epostanızı giriniz: ")
-        eposta2_kullanici = input("Epostanızı giriniz (tekrar): ")
-        sifre_kullanici = input("Sifrenizi giriniz: ")
-        sifre2_kullanici = input("Sifrenizi giriniz (tekrar): ") """
+    islem = input("Bir islem secin: ")
+    if (islem == "q"):
+        print("Sonlandırılıyor...")
+        break
+    elif (islem=="1"):
+        a = int(input("Ucgenin taban uzunlugunu giriniz: "))
+        h = int(input("Ucgenin yüksekligini giriniz: "))
+        print(ucgen_alan(a,h))
+    elif (islem=="2"):
+        z = int(input("Ucgenin kenarını giriniz: "))
+        x = int(input("Ucgenin kenarını giriniz: "))
+        c = int(input("Ucgenin kenarını giriniz: "))
+        print(cevre(z,x,c))
+    else:
+        print("Gecersiz islem") """
+
+
+# Recursive fonksiyon - fonkisyonun kendini çağırması
+# sürekli kendini cagırmaması için bitirme durumu belirlenmeli
+# belli şartlarda kendini çağırması gerekir
+# faktoriyel
+"""
+def faktoriyel(sayi):
+    if (sayi==0 or sayi==1):
+        return 1
+    else:
+        return sayi * faktoriyel(sayi-1) # verilen sayinin bir eksiğini kendini göndererek tekrar cagırır. 1'e esit olmayana kadar tekrar eder
+
+print(faktoriyel(4)) """
+# liste elemanlarını toplama
+"""
+def topla(list):
+    if len(list)==0:
+        return 0
+    else:
+        return list[0] + topla(list[1::]) # 0 indeksli elemana sonuna kadar sayıları ekle, her dönüste 0 indeksli eleman bir sonraki olur
+
+print(topla([1,5,4,7])) """
+
+# fibonacci
+# 1 1 2 3 5 8...
+"""
+def fibonacci(sayi):
+    if (sayi == 1):
+        return 1
+    elif (sayi == 0):
+        return 0
+    else:
+        return fibonacci(sayi-2)+fibonacci(sayi-1) # girilen sayıdan iki önceki ve bir önceki sayıyı toplar 
+
+tekrar=int(input("Bir sayi giriniz: "))
+for i in range(tekrar):
+    print(fibonacci(i),end=" ") # end fonksiyonu for cıktısını yan yana yazdırır. tırnak içine verilen degeri aralarına yazdırır. """
+
+# listenin elemanlarının sıralarını ters çevirir
+"""
+def ters_cevir(liste):
+    if len(liste) == 0:
+        return liste
+    else:
+        return [liste [-1]] + ters_cevir(liste[:-1]) # listenin son elemanına (liste[-1]) tersini (liste[:1]) ekleyerek yeni listeyi oluşturur
+print(ters_cevir([1,5,4,6,7,8])) """
+
+# Aldığı sayının kaç basamaklı olduğunu yazdıran bir recursive fonksiyonu yazalım. (Örneğin sayı 1234 ise çıktı 4 olmalı
+"""
+def basamak_bul(sayi):
+    if (sayi%10 < 1):
+        return sayi
+    else:
+        return 1 + basamak_bul(sayi//10)
+print(basamak_bul(78945)) """
+
+# "import math" olarak eklersek math. olarak fonksiyonları kullanmamız gerekir.
+# "import math as matematik" dersek matematik. ile kullanabilir. as' den sonra istedgimiz ismi verebiliriz.
+# "from math import *" dersek direkt fonksiyonun adıyla kullanabiliriz. math. yazmaya gerek kalmaz.
+# "help(math)" math kutuphanesinin sahip oldugu her seyi acıklamasıyla gösterir.
+# "dir(math)" math kutuphanesinin sahip olduklarının sadece baslıgını getirir.
+# "from math import" floor dersek sadece floor fonksiyonunu kullanabiliriz.
+
