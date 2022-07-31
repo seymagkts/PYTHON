@@ -235,6 +235,7 @@ print(a) # return içeren fonksiyon yazdırma
 
 print(kareDondur(5)) # return içeren fonksiyon yazdırma 2
  """
+# esnek sayıda değer göndermek için başa * koyulur. istenildiği kadar parametre gönderebiliriz.
 # fonksiyonlar ornek 1 - fonksiyon içinde başka bir fonksiyon çağırma
 """ import math 
 def hesapla(sayi1,sayi2):
@@ -259,3 +260,10 @@ print(sat(600,18)) """
 .append("") -> listenin sonuna ekleme yapar
 .pop() -> listenin içine indeks verilmezse listenin son elemanını cıkarır, verilirse o indeksteki elemanı cıkarır.
  """
+# global - yerel degiskenler
+# yerel degiskenler: fonksiyon blogundaki degiskenler, ona ozel ve sadece o kod blogu tarafından ulasılabilen değiskenler yerel degiskenlerdir.
+# global degiskenler: fonksiyon dısında bir yer tanımlanmıs, programın her yerinden ulasılabilen değiskenler.
+# yerel degiskenler fonksiyonlara ve sınıflara ozgudur. if, while gibi kod bloglarında tanımlanan degiskenler globaldir.
+
+# lambda ifadeleri
+# tek satırda fonksiyon yazma, kucuk kodlarda kullanılır
